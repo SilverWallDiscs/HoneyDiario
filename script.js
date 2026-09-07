@@ -8,8 +8,8 @@ const latestCard = document.getElementById("latest-card");
 const isConfigured =
   typeof SUPABASE_URL === "string" &&
   typeof SUPABASE_ANON_KEY === "string" &&
-  !SUPABASE_URL.includes("https://rnppkatenafgptskrqhs.supabase.co") &&
-  !SUPABASE_ANON_KEY.includes("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJucHBrYXRlbmFmZ3B0c2tycWhzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODg4MTk2OTMsImV4cCI6MjEwNDM5NTY5M30.44YRXWvPTgHe-8uDkCp9Zpheq7TqTxouP06GOmZYWwA");
+  !SUPABASE_URL.includes("TU-PROYECTO") &&
+  !SUPABASE_ANON_KEY.includes("TU-ANON-KEY");
 
 let db = null;
 
