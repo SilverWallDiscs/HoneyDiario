@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#f8d8e5" />
+  <meta name="description" content="Un pequeño mensaje cada día para Honey." />
+  <title>Para Honey ♡</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="noise"></div>
+  <div class="floating-hearts" aria-hidden="true"></div>
+
+  <header class="hero">
+    <div class="hero__content">
+      <span class="kicker">Un pequeño rincón para ti</span>
+      <h1>Para Honey <span>♡</span></h1>
+      <p>
+        Quiero dejarte algo bonito cada día. A veces serán unas pocas palabras,
+        otras veces un mensaje más largo, pero todos van a tener algo en común:
+        están escritos pensando en ti.
+      </p>
+
+      <a class="scroll-link" href="#mensajes">
+        Ver mis mensajes para ti
+        <span>↓</span>
+      </a>
+    </div>
+
+    <div class="hero__seal" aria-hidden="true">S + H</div>
+  </header>
+
+  <main id="mensajes">
+    <section class="intro reveal">
+      <p class="small-label">365 razones, recuerdos y pequeñas cosas</p>
+      <h2>Un mensaje nuevo, un día a la vez.</h2>
+      <p>
+        No importa qué tan normal haya sido el día. Siempre puedo encontrar
+        una razón para recordarte lo especial que eres para mí.
+      </p>
+    </section>
+
+    <section id="latest-section" class="latest-section reveal" hidden>
+      <div class="latest-label">El mensaje más reciente</div>
+      <article id="latest-card" class="latest-card">
+        <div class="latest-card__day"></div>
+        <h3></h3>
+        <p></p>
+        <div class="latest-card__signature">— Silver ♡</div>
+      </article>
+    </section>
+
+    <section class="days-section">
+      <div class="section-heading reveal">
+        <span class="small-label">Todos los días</span>
+        <h2>Mis mensajitos para ti</h2>
+      </div>
+
+      <div id="messages-grid" class="messages-grid"></div>
+
+      <div id="empty-state" class="empty-state reveal" hidden>
+        <span>♡</span>
+        <h3>El primer mensaje todavía está por escribirse.</h3>
+        <p>Muy pronto este lugar se va a llenar de pequeñas palabras para Honey.</p>
+      </div>
+
+      <div id="loading" class="loading">
+        <div class="loading-heart">♡</div>
+        <p>Cargando mensajitos...</p>
+      </div>
+
+      <div id="error-state" class="error-state" hidden>
+        <h3>No pude cargar los mensajes.</h3>
+        <p>Revisa la configuración de Supabase en <code>config.js</code>.</p>
+      </div>
+    </section>
+
+    <section class="closing reveal">
+      <div class="closing__heart">♡</div>
+      <h2>Me gusta tenerte en mi vida.</h2>
+      <p>
+        Y quiero que esta página crezca poquito a poquito, igual que todos
+        los recuerdos que vamos creando juntos.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Hecho con cariño para Honey ♡</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#2e2228" />
+  <title>Admin · Para Honey ♡</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+  <main class="admin-shell">
+    <section class="brand">
+      <div class="brand__heart">♡</div>
+      <div>
+        <span>Panel privado</span>
+        <h1>Para Honey</h1>
+      </div>
+    </section>
+
+    <section id="config-warning" class="panel warning" hidden>
+      <h2>Primero configura Supabase</h2>
+      <p>
+        Abre <code>config.js</code> y pega tu Project URL y tu anon key.
+        Después vuelve a cargar esta página.
+      </p>
+    </section>
+
+    <section id="login-panel" class="panel login-panel">
+      <div class="panel-heading">
+        <span class="eyebrow">Administrador</span>
+        <h2>Iniciar sesión</h2>
+        <p>Solo tú deberías poder publicar nuevos mensajes.</p>
+      </div>
+
+      <form id="login-form">
+        <label>
+          Email
+          <input id="email" type="email" autocomplete="email" required placeholder="tu@email.com" />
+        </label>
+
+        <label>
+          Contraseña
+          <input id="password" type="password" autocomplete="current-password" required placeholder="••••••••" />
+        </label>
+
+        <button type="submit">Entrar</button>
+        <p id="login-error" class="form-message error"></p>
+      </form>
+    </section>
+
+    <section id="dashboard" class="dashboard" hidden>
+      <header class="dashboard-top">
+        <div>
+          <span class="eyebrow">Panel de mensajes</span>
+          <h2>Escribe algo bonito para Honey ♡</h2>
+        </div>
+        <button id="logout-btn" class="secondary-btn">Cerrar sesión</button>
+      </header>
+
+      <div class="admin-grid">
+        <section class="panel editor-panel">
+          <div class="panel-heading">
+            <span id="mode-label" class="eyebrow">Nuevo mensaje</span>
+            <h3 id="form-title">Agregar un día</h3>
+          </div>
+
+          <form id="message-form">
+            <input id="message-id" type="hidden" />
+
+            <label>
+              Número del día
+              <input id="day-number" type="number" min="1" step="1" required placeholder="1" />
+            </label>
+
+            <label>
+              Título
+              <input id="title" type="text" maxlength="120" required placeholder="Algo que adoro de ti" />
+            </label>
+
+            <label>
+              Mensaje
+              <textarea id="message" rows="11" required placeholder="Hoy quería recordarte que..."></textarea>
+            </label>
+
+            <div class="form-actions">
+              <button id="save-btn" type="submit">Publicar mensaje</button>
+              <button id="cancel-edit-btn" type="button" class="secondary-btn" hidden>Cancelar edición</button>
+            </div>
+
+            <p id="save-message" class="form-message"></p>
+          </form>
+        </section>
+
+        <aside class="panel preview-panel">
+          <span class="eyebrow">Vista previa</span>
+          <div class="preview-card">
+            <div id="preview-day">Día 1</div>
+            <h3 id="preview-title">Tu título aparecerá aquí</h3>
+            <p id="preview-message">Tu mensaje aparecerá aquí mientras escribes.</p>
+            <span>— Silver ♡</span>
+          </div>
+        </aside>
+      </div>
+
+      <section class="panel existing-panel">
+        <div class="panel-heading">
+          <span class="eyebrow">Publicados</span>
+          <h3>Mensajes existentes</h3>
+        </div>
+        <div id="messages-list" class="messages-list"></div>
+        <p id="list-empty" class="empty-copy" hidden>Todavía no has publicado ningún mensaje.</p>
+      </section>
+    </section>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../config.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>
